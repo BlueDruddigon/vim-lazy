@@ -53,6 +53,7 @@ require("lazy").setup({
     { import = "plugins.extras.editor" },
     { import = "plugins.extras.formatting.prettierd" },
     { import = "plugins.extras.lang" },
+    { import = "plugins.extras.linting.cspell" },
     { import = "plugins.extras.util.leetcode" },
   },
   defaults = {
