@@ -20,7 +20,7 @@ local supported = {
 return {
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "prettierd" } }
+    opts = { ensure_installed = { "prettierd" } },
   },
 
   -- conform
@@ -33,6 +33,6 @@ return {
         opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
         table.insert(opts.formatters_by_ft[ft], "prettierd")
       end
-    end
+    end,
   },
 }
