@@ -15,7 +15,7 @@ return {
 
       return vim.tbl_deep_extend("force", opts, {
         codelens = { enabled = true },
-        server = {
+        servers = {
           basedpyright = {
             settings = {
               basedpyright = {
