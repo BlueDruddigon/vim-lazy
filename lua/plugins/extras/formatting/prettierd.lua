@@ -1,4 +1,4 @@
-local supported = {
+local supported_filetypes = {
   "css",
   "graphql",
   "handlebars",
@@ -29,10 +29,11 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.formatters_by_ft = opts.formatters_by_ft or {}
-      for _, ft in ipairs(supported) do
+      for _, ft in ipairs(supported_filetypes) do
         opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
         table.insert(opts.formatters_by_ft[ft], "prettierd")
       end
+      return opts
     end,
   },
 }
