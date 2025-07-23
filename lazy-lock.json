@@ -20,7 +20,7 @@
   "incline.nvim": { "branch": "main", "commit": "5a1d8a1abe6acbf59b716e89551b1cea974c9440" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lazydev.nvim": { "branch": "main", "commit": "f59bd14a852ca43db38e3662395354cb2a9b13e0" },
-  "leap.nvim": { "branch": "main", "commit": "d9c6bb1a2267f96169b955dfd68600b1079213ce" },
+  "leap.nvim": { "branch": "main", "commit": "a95876479037619214a6c5d082738362b8bf61ca" },
   "leetcode.nvim": { "branch": "master", "commit": "46c627cc51c36163141b1951e703bfdb437a9e18" },
   "lualine.nvim": { "branch": "master", "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9" },
   "markdown-preview.nvim": { "branch": "master", "commit": "9becceee5740b7db6914da87358a183ad11b2049" },
@@ -60,7 +60,7 @@
   "tokyonight.nvim": { "branch": "main", "commit": "b262293ef481b0d1f7a14c708ea7ca649672e200" },
   "trouble.nvim": { "branch": "main", "commit": "748ca2789044607f19786b1d837044544c55e80a" },
   "ts-comments.nvim": { "branch": "main", "commit": "79e4337e4231ff8ca33dab85162b5ee8e78f22ce" },
-  "typeshed": { "branch": "main", "commit": "ddd8434a42b83923b770450386ee12672ab3c604" },
+  "typeshed": { "branch": "main", "commit": "a1dc346ef6b2914197786c8a6be76202e929477a" },
   "vim-helm": { "branch": "master", "commit": "cc5ac22444332381f38084a6c7f023c25eef6201" },
   "vim-repeat": { "branch": "master", "commit": "8106e142dfdc278ff3eaaadd7b362ad7949d4357" },
   "which-key.nvim": { "branch": "main", "commit": "fcbf4eea17cb299c02557d576f0d568878e354a4" }
