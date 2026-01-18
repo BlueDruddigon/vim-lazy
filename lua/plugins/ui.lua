@@ -1,24 +1,18 @@
 return {
-  -- statusline
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    config = function()
-      require("lualine").setup({
-        options = { theme = "solarized_dark" },
-      })
-    end,
+    opts = {
+      options = { theme = "solarized_dark" },
+    },
   },
 
-  -- customize `noice.nvim`
+  -- customizing noice.nvim
   {
     "folke/noice.nvim",
     opts = function(_, opts)
-      table.insert(opts.routes, {
-        filter = {
-          event = "notify",
-          find = "No information available",
-        },
+      table.insert(opts.routes, 1, {
+        filter = { event = "notify", find = "No information available" },
         opts = { skip = true },
       })
 
@@ -52,23 +46,18 @@ return {
         end,
       })
 
-      opts.presets.lsp_doc_border = true
+      return vim.tbl_deep_extend("force", opts, {
+        presets = { lsp_doc_border = true },
+      })
     end,
   },
 
-  -- disable `snacks.nvim` plugins
+  -- disable `snacks.nvim` dashboard
   {
     "folke/snacks.nvim",
-    opts = {
-      dashboard = { enabled = false },
-      terminal = {
-        enabled = true,
-        win = { position = "float", border = "rounded", height = 0.8, width = 0.8, backdrop = false },
-      },
-    },
+    opts = { dashboard = { enabled = false } },
   },
 
-  -- filename
   {
     "b0o/incline.nvim",
     dependencies = { "craftzdog/solarized-osaka.nvim" },
@@ -80,18 +69,18 @@ return {
         highlight = {
           groups = {
             InclineNormal = { guibg = colors.magenta500, guifg = colors.base04 },
-            InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
+            InclineNormalNC = { guibg = colors.base03, guifg = colors.violet500 },
           },
         },
         window = { margin = { vertical = 0, horizontal = 1 } },
         render = function(props)
-          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          local fn = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           if vim.bo[props.buf].modified then
-            filename = "[+] " .. filename
+            fn = "[+]" .. fn
           end
 
-          local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-          return { { icon, guifg = color }, { " " }, { filename } }
+          local icon, color = require("nvim-web-devicons").get_icon_color(fn)
+          return { { icon, guifg = color }, { " " }, { fn } }
         end,
       })
     end,

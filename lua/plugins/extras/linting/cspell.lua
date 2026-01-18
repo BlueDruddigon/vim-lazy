@@ -32,10 +32,12 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       opts.linters_by_ft = opts.linters_by_ft or {}
+
       for _, ft in ipairs(supported_filetypes) do
         opts.linters_by_ft[ft] = opts.linters_by_ft[ft] or {}
-        table.insert(opts.linters_by_ft[ft], "cspell")
+        table.insert(opts.linters_by_ft[ft], 1, "cspell")
       end
+
       return opts
     end,
   },

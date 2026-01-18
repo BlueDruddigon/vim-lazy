@@ -1,5 +1,4 @@
 return {
-  -- gitsigns
   {
     "lewis6991/gitsigns.nvim",
     opts = function(_, opts)
@@ -12,20 +11,6 @@ return {
     end,
   },
 
-  -- keybindings memo
-  {
-    "folke/which-key.nvim",
-    opts = {
-      spec = {
-        {
-          mode = { "n", "v" },
-          { "<leader>g", group = "git/copilot" },
-        },
-      },
-    },
-  },
-
-  -- better diagnostics list and others
   {
     "folke/trouble.nvim",
     opts = function(_, opts)
@@ -53,35 +38,54 @@ return {
         },
       })
     end,
-    keys = function(_, keys)
-      return vim.tbl_deep_extend("force", keys, {
-        { "ge", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", desc = "(Trouble) Document Diagnostics" },
-        { "gE", "<CMD>Trouble diagnostics toggle<CR>", desc = "(Trouble) Workspace Diagnostics" },
-        { "gq", "<CMD>Trouble qflist toggle<CR>", desc = "(Trouble) Quickfix List" },
+    keys = {
+      { "ge", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", desc = "(Trouble) Document Diagnostics" },
+      { "gE", "<CMD>Trouble diagnostics toggle<CR>", desc = "(Trouble) Workspace Diagnostics" },
+      { "gq", "<CMD>Trouble qflist toggle<CR>", desc = "(Trouble) Quickfix List" },
+    },
+  },
+
+  {
+    "folke/snacks.nvim",
+    opts = function(_, opts)
+      return vim.tbl_deep_extend("force", opts, {
+        picker = {
+          layouts = {
+            sidebar = {
+              layout = { width = 25, min_width = 25 },
+            },
+          },
+          sources = {
+            explorer = {
+              layout = { preset = "sidebar" },
+              auto_close = true,
+            },
+          },
+        },
       })
     end,
   },
 
-  -- commenters
   {
-    "numToStr/Comment.nvim",
-    event = "VeryLazy",
+    "ggandor/flit.nvim",
+    opts = { labeled_modes = "n" },
+  },
+
+  {
+    "brenoprata10/nvim-highlight-colors",
+    event = "BufReadPre",
     opts = {
-      ignore = "^$",
-      toggler = { line = ",," },
-      opleader = { line = ",," },
-      pre_hook = function(...)
-        local loaded, ts_comment = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
-        if loaded and ts_comment then
-          return ts_comment.create_pre_hook()(...)
-        end
-      end,
-    },
-    keys = {
-      { ",,", mode = { "n", "v" } },
+      render = "background",
+      enable_hex = true,
+      enable_short_hex = true,
+      enable_rgb = true,
+      enable_hsl = true,
+      enable_hsl_without_function = true,
+      enable_ansi = true,
+      enable_var_usage = true,
+      enable_tailwind = true,
     },
   },
 
-  -- colorizer
   { "NvChad/nvim-colorizer.lua", event = "VeryLazy", config = true },
 }
