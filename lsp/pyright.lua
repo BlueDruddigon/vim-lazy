@@ -1,0 +1,47 @@
+return {
+  cmd = { "pyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "pyrightconfig.json", ".git" },
+  settings = {
+    python = {
+      analysis = {
+        autoImportCompletions = false,
+        autoSearchPaths = true,
+        diagnosticMode = "openFilesOnly",
+        diagnosticSeverityOverrides = {},
+        exclude = {
+          "**/__pycache__",
+          "**/node_modules",
+          "build",
+          "dist",
+          "tests",
+          ".vscode",
+          ".idea",
+          ".git",
+          ".venv",
+        },
+        ignore = {
+          "**/__pycache__",
+          "**/node_modules",
+          "build",
+          "dist",
+          "tests",
+          ".vscode",
+          ".idea",
+          ".git",
+          ".venv",
+        },
+        include = { "src" },
+        logLevel = "Warning",
+        stubPath = vim.fn.stdpath("data") .. "/lazy/python-type-stubs",
+        typeCheckingMode = "standard",
+        typeshedPaths = { vim.fn.stdpath("data") .. "/lazy/typeshed" },
+      },
+    },
+    pyright = {
+      disableLanguageServices = false,
+      disableOrganizeImports = true,
+      disableTaggedHints = false,
+    },
+  },
+}
