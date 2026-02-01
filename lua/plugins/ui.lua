@@ -2,9 +2,11 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = {
-      options = { theme = "solarized_dark" },
-    },
+    config = function()
+      require("lualine").setup({
+        options = { theme = "solarized_dark" },
+      })
+    end,
   },
 
   -- customizing noice.nvim
