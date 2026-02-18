@@ -58,6 +58,7 @@ return {
           sources = {
             explorer = {
               layout = { preset = "sidebar" },
+              hidden = true,
               auto_close = true,
             },
           },
