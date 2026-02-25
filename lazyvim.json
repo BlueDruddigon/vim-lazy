@@ -36,7 +36,8 @@
     "lazyvim.plugins.extras.ui.smear-cursor",
     "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.mini-hipatterns",
-    "lazyvim.plugins.extras.util.project"
+    "lazyvim.plugins.extras.util.project",
+    "plugins.extras.ai.claudecode"
   ],
   "install_version": 8,
   "news": {
