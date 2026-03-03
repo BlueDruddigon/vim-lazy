@@ -68,11 +68,6 @@ return {
   },
 
   {
-    "ggandor/flit.nvim",
-    opts = { labeled_modes = "n" },
-  },
-
-  {
     "brenoprata10/nvim-highlight-colors",
     event = "BufReadPre",
     opts = {
