@@ -24,10 +24,6 @@ map("n", "<A-k>", "<CMD>m .-2<CR>==")
 map("v", "<A-j>", "<CMD>m '>+1<CR>gv=gv")
 map("v", "<A-k>", "<CMD>m '<-2<CR>gv=gv")
 
--- buffer switching
-map("n", "<S-h>", "<CMD>bprev<CR>")
-map("n", "<S-l>", "<CMD>bnext<CR>")
-
 -- indent/dedent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
