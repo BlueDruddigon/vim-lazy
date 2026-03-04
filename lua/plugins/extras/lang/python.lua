@@ -1,5 +1,3 @@
-vim.lsp.enable("basedpyright")
-
 return {
   -- LSP servers
   {

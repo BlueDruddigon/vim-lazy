@@ -2,7 +2,24 @@ return {
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
-    opts = { codelens = { enabled = true } },
+    opts = {
+      codelens = { enabled = true },
+      setup = {
+        ruff = function()
+          Snacks.util.lsp.on({ name = "ruff" }, function(_, client)
+            -- disable `ruff` hover and code action capabilities
+            client.server_capabilities.hoverProvider = false
+            client.server_capabilities.codeActionProvider = false
+          end)
+        end,
+        basedpyright = function()
+          Snacks.util.lsp.on({ name = "basedpyright" }, function(_, client)
+            -- disable `basedpyright` hover and code action capabilities
+            client.server_capabilities.codeActionProvider = false
+          end)
+        end,
+      },
+    },
     keys = { { "<C-k>", false } },
   },
 
