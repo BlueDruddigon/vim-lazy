@@ -10,3 +10,13 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
   command = "set nopaste",
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "pyproject.toml",
+  callback = function()
+    require("conform").format({
+      formatters = { "pyproject-fmt" },
+      timeout_ms = 1000,
+    })
+  end,
+})
