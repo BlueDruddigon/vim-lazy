@@ -20,8 +20,6 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "solarized-osaka" } },
     -- import/override with your plugins
     { import = "plugins" },
-    { import = "plugins.extras.lang" },
-    { import = "plugins.extras.linting.cspell" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
