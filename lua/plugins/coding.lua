@@ -7,7 +7,7 @@ end
 return {
   {
     "saghen/blink.cmp",
-    dependencies = { "saghen/blink.lib" },
+    version = "1.*",
     opts = {
       completion = {
         keyword = { range = "prefix" },
