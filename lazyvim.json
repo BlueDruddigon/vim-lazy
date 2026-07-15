@@ -24,7 +24,6 @@
     "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.util.project",
     "plugins.extras.lang.clangd",
-    "plugins.extras.lang.markdown",
     "plugins.extras.lang.python",
     "plugins.extras.linting.cspell"
   ],

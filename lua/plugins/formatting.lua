@@ -20,7 +20,7 @@ local supported_filetypes = {
 return {
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "prettierd" } },
+    opts = { ensure_installed = { "prettier" } },
   },
 
   -- conform
@@ -31,7 +31,7 @@ return {
       opts.formatters_by_ft = opts.formatters_by_ft or {}
       for _, ft in ipairs(supported_filetypes) do
         opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
-        table.insert(opts.formatters_by_ft[ft], "prettierd")
+        table.insert(opts.formatters_by_ft[ft], "prettier")
       end
       return opts
     end,
